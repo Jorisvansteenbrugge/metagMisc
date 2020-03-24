@@ -192,7 +192,7 @@ phyloseq_transform_css <- function(physeq, norm = TRUE, log = TRUE, ...){
 
   # Substitue raw abundance to the css-normalized data
   physeq.tr <- physeq
-  phyloseq::otu_table(physeq.tr) <- phyloseq::otu_table(otu_norm, taxa_are_rows = T)
+  phyloseq::otu_table(physeq.tr) <- phyloseq::otu_table(otu_norm, taxa_are_rows = physeq@otu_table@taxa_are_rows)
   return(physeq.tr)
 }
 
